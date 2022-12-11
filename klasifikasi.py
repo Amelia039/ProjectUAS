@@ -97,8 +97,8 @@ kategori jinak atau ganas""")
 with load_data:
   
     st.write("""# Menampilkan Dataset""")
-        df=pd.read_csv("https://raw.githubusercontent.com/Amelia039/my-dataset/main/wdbc.csv")
-        st.dataframe(df)
+    df=pd.read_csv("https://raw.githubusercontent.com/Amelia039/my-dataset/main/wdbc.csv")
+    st.dataframe(df)
         
 with tahap_preprocessing:
     import warnings
