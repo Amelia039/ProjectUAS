@@ -38,7 +38,7 @@ st.write("""
 img= Image.open('image.jpg')
 st.image(img,use_column_width=False)
 
-deskripsi,import_data, tahap_preprocessing, tahap_modeling, implementation = st.tabs(["Deskripsi Data","Import Data", "Prepocessing", "Modeling", "Implementation"])
+deskripsi,load_data, tahap_preprocessing, tahap_modeling, implementation = st.tabs(["Deskripsi Data","Load Data", "Prepocessing", "Modeling", "Implementation"])
 df=pd.read_csv("https://raw.githubusercontent.com/Amelia039/my-dataset/main/wdbc.csv")
 with deskripsi:
      st.write("""- Kanker payudara (Carcinoma mamae) 
@@ -83,29 +83,21 @@ kategori jinak atau ganas""")
      st.caption("kekompakan")
      st.latex(r'''\frac{keliling^2}{luas - 1,0 }''')
      "concavity"
-     st.caption("kekompakan")
-     st.latex(r'''\frac{keliling^2}{luas - 1,0 }''')
+     st.caption("Merupakan keparahan bagian cekung dari kontur")
      " concave_points"	
-     st.caption("kekompakan")
-     st.latex(r'''\frac{keliling^2}{luas - 1,0 }''')
+     st.caption("Merupakan jumlah bagian cekung dari kontur")
      "symmetry"
-     st.caption("kekompakan")
-     st.latex(r'''\frac{keliling^2}{luas - 1,0 }''')
+     st.caption("Merupakan simetri payudara")
      "fractal dimension"
-     st.caption("kekompakan")
-     st.latex(r'''\frac{keliling^2}{luas - 1,0 }''')
+     st.caption("memberikan deskripsi numerik pola pertumbuhan tumor sebagai angka kontinu antara 1")
+     st.write("""# Info Dataset""")
+     st.df.info()
      
-with import_data:
-   
-    import warnings
-    warnings.simplefilter(action='ignore', category=FutureWarning) # setting ignore as a parameter and further adding category
-
-    st.write("""# Tahapan untuk mengimpor Dataset""")
-    uploaded_files = st.file_uploader("Upload file CSV", accept_multiple_files=True)
-    for uploaded_file in uploaded_files:
-        
-        df = pd.read_csv(uploaded_file)
-        st.write("Nama File Dataset= ", uploaded_file.name)
+     
+with load_data:
+  
+    st.write("""# Menampilkan Dataset""")
+        df=pd.read_csv("https://raw.githubusercontent.com/Amelia039/my-dataset/main/wdbc.csv")
         st.dataframe(df)
         
 with tahap_preprocessing:
@@ -137,11 +129,7 @@ with tahap_preprocessing:
     dumies = pd.get_dummies(df.diagnosis).columns.values.tolist()
     dumies = np.array(dumies)
 
-    labels = pd.DataFrame({
-        '1' : [dumies[1]],
-        '0' : [dumies[0]]
-    })
-
+    labels=dumies
     st.write(labels)
     
 with tahap_modeling:
