@@ -90,9 +90,9 @@ kategori jinak atau ganas""")
      st.caption("Merupakan simetri payudara")
      "fractal dimension"
      st.caption("memberikan deskripsi numerik pola pertumbuhan tumor sebagai angka kontinu antara 1")
-     st.write("""# Info Dataset""")
+     st.write("""# Jumlah data dalam Dataset""")
      jumlah=df.count()
-     st.dataFrame(jumlah)
+     jumlah
      
 with load_data:
   
