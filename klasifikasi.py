@@ -92,7 +92,7 @@ kategori jinak atau ganas""")
      st.caption("memberikan deskripsi numerik pola pertumbuhan tumor sebagai angka kontinu antara 1")
      st.write("""# Info Dataset""")
      jumlah=df.count()
-     st.dataFrame(jumlah(
+     st.dataFrame(jumlah)
      
 with load_data:
   
