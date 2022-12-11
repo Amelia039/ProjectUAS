@@ -35,7 +35,7 @@ st.write("""
          """
 )
 
-img= Image.open('env\image.jpg')
+img= Image.open('image.jpg')
 st.image(img,use_column_width=False)
 
 deskripsi,import_data, tahap_preprocessing, tahap_modeling, implementation = st.tabs(["Deskripsi Data","Import Data", "Prepocessing", "Modeling", "Implementation"])
