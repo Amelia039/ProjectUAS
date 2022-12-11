@@ -91,8 +91,8 @@ kategori jinak atau ganas""")
      "fractal dimension"
      st.caption("memberikan deskripsi numerik pola pertumbuhan tumor sebagai angka kontinu antara 1")
      st.write("""# Info Dataset""")
-     st.df.info()
-     
+     jumlah=df.count()
+     st.dataFrame(jumlah(
      
 with load_data:
   
