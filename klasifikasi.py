@@ -184,13 +184,6 @@ with tahap_modeling:
 
     if naive :
         if mod :
-            import time
-
-            my_bar = st.progress(0)
-
-            for percent_complete in range(40):
-                           time.sleep(0.1)
-            my_bar.progress(percent_complete + 1)
             st.write('Model Naive Bayes accuracy score: {0:0.2f}'. format(akurasi))
     if kn :
         if mod:
