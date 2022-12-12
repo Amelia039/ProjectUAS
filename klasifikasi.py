@@ -109,9 +109,10 @@ with tahap_preprocessing:
 
     st.write("""# Tahapan untuk melakukan Preprocessing""")
    
-    
+    st.write("""Membuang fitur yang tidak diperlukan""")
     df = df.drop(columns=["id","radius_se","texture_se","perimeter_se","area_se","smoothness_se","compactness_se","concavity_se","concave_points_se","symmetry_se","fractal_dimension_se","radius_worst","texture_worst","perimeter_worst","area_worst","smoothness_worst","compactness_worst","concavity_worst","concave_points_worst","symmetry_worst","fractal_dimension_worst"])
     X = df.drop(columns=['diagnosis'])
+    st.dataframe(df)
     y = df['diagnosis'].values
     df_min = X.min()
     df_max = X.max()
