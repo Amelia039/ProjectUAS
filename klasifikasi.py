@@ -55,7 +55,7 @@ kategori jinak atau ganas""")
      result = df.dtypes
      result
      st.write("""# sumber data link dataset
-              https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)
+              https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data?select=data.csv
               """)
      st.write("""# Fitur dalam dataset""")
      "id"
@@ -119,7 +119,6 @@ with tahap_preprocessing:
     #scaler.transform(features)
     scaled = scaler.fit_transform(X)
     features_names = X.columns.copy()
-    #features_names.remove('label')
     scaled_features = pd.DataFrame(scaled, columns=features_names)
 
     st.subheader('Hasil Normalisasi Data')
@@ -128,7 +127,7 @@ with tahap_preprocessing:
     st.subheader('Target Label')
     dumies = pd.get_dummies(df.diagnosis).columns.values.tolist()
     dumies = np.array(dumies)
-
+    st.write("M= Malignant(ganas), B = benign(jinak)")
     labels=dumies
     st.write(labels)
     
@@ -137,6 +136,7 @@ with tahap_modeling:
     warnings.simplefilter(action='ignore', category=FutureWarning) # setting ignore as a parameter and further adding category
     X_train, X_test = train_test_split(scaled_features,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
     y_train, y_test = train_test_split(y, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing
+    st.write(X_train)
     st.write("""# Tahap Modeling """)
     st.subheader("Berikut ini adalah pilihan untuk Modeling")
     st.write("Pilih Model yang untuk Cek Akurasi")
