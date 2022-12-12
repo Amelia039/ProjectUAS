@@ -31,7 +31,7 @@ Web Apps for Breast Cancer Wisconsin (Diagnostic) Data Set Classification
          """
 )
 st.write("""
-#Amelia Nur Septiyasari - 200411100039 - Penambangan Data IF5A    
+Amelia Nur Septiyasari - 200411100039 - Penambangan Data IF5A    
          """
 )
 
@@ -93,6 +93,9 @@ kategori jinak atau ganas""")
      st.write("""# Jumlah data dalam Dataset""")
      jumlah=df.count()
      jumlah
+     st.write("""# Jumlah fitur dalam Dataset""")
+     fitur=len(df.columns)
+     fitur
      
 with load_data:
   
