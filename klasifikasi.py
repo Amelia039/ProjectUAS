@@ -136,7 +136,8 @@ with tahap_modeling:
     warnings.simplefilter(action='ignore', category=FutureWarning) # setting ignore as a parameter and further adding category
     X_train, X_test = train_test_split(scaled_features,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
     y_train, y_test = train_test_split(y, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing
-    st.write(X_train)
+    datatrain=X_train.count()
+    st.write("""data train= """,datatrain)
     st.write("""# Tahap Modeling """)
     st.subheader("Berikut ini adalah pilihan untuk Modeling")
     st.write("Pilih Model yang untuk Cek Akurasi")
