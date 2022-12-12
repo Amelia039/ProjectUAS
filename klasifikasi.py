@@ -138,7 +138,7 @@ with tahap_modeling:
     y_train, y_test = train_test_split(y, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing
     datatrain=X_train.count()
     st.write("""data train= """,datatrain)
-    datatest=y_test.count()
+    datatest=X_test.count()
     st.write("""data test= """,datatest)
     
     st.write("""# Tahap Modeling """)
